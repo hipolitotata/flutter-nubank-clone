@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double _screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.purple,
+      backgroundColor: Colors.purple[800],
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
