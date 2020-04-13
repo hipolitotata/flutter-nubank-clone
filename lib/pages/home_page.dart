@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nubank_flutter/pages/widgets/dots_app.dart';
+import 'package:nubank_flutter/pages/widgets/menu_app.dart';
 
 // widgets
 import 'package:nubank_flutter/pages/widgets/my_app_bar.dart';
@@ -27,30 +28,35 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget build(BuildContext context) {
-    double _screenHeight = MediaQuery.of(context).size.height;
+    double _screenHeigth = MediaQuery.of(context).size.height;
 
     if (_yPosition == null) {
-      _yPosition = _screenHeight * .24;
+      _yPosition = _screenHeigth * .24;
     }
 
     return Scaffold(
       backgroundColor: Colors.purple[800],
       body: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.topCenter,
         children: <Widget>[
           MyAppBar(
               showMenu: _showMenu,
               onTap: () {
-                setState(() => _showMenu = !_showMenu);
+                setState(() {
+                  _showMenu = !_showMenu;
+                  _yPosition =
+                      _showMenu ? _screenHeigth * .75 : _screenHeigth * .24;
+                });
               }),
+          MenuApp(showMenu: _showMenu, top: _screenHeigth * .17),
           PageViewApp(
               top: _yPosition,
               changedPage: (index) {
                 setState(() => _currentIndex = index);
               },
               onPanUpdate: (details) {
-                double positionBottomLimit = _screenHeight * .75;
-                double positionTopLimit = _screenHeight * .24;
+                double positionBottomLimit = _screenHeigth * .75;
+                double positionTopLimit = _screenHeigth * .24;
                 double midlePosition = positionBottomLimit - positionTopLimit;
 
                 midlePosition = midlePosition / 2;
@@ -90,7 +96,7 @@ class _HomePageState extends State<HomePage> {
               }),
           DotsApp(
               currentIndex: _currentIndex,
-              top: !_showMenu ? _screenHeight * .70 : _screenHeight)
+              top: !_showMenu ? _screenHeigth * .70 : _screenHeigth)
         ],
       ),
     );
