@@ -13,7 +13,9 @@ class DotsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
+    return AnimatedPositioned(
+      duration: Duration(milliseconds: 300),
+      curve: Curves.easeOut,
       top: top,
       child: Row(
         children: <Widget>[
