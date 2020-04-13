@@ -4,6 +4,7 @@ import 'package:nubank_flutter/pages/widgets/card_app.dart';
 
 // widgets
 import 'package:nubank_flutter/pages/widgets/my_app_bar.dart';
+import 'package:nubank_flutter/pages/widgets/page_view.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -30,15 +31,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 setState(() => _showMenu = !_showMenu);
               }),
-          Positioned(
-              top: _screenHeight * .19,
-              height: _screenHeight * .45,
-              left: 0,
-              right: 0,
-              child: PageView(
-                physics: BouncingScrollPhysics(),
-                children: <Widget>[CardApp(), CardApp()],
-              ))
+          PageViewApp(top: _screenHeight * .20)
         ],
       ),
     );
