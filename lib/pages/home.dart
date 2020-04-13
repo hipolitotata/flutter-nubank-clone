@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nubank_flutter/pages/widgets/card_app.dart';
+import 'package:nubank_flutter/pages/widgets/dots_app.dart';
 
 // widgets
 import 'package:nubank_flutter/pages/widgets/my_app_bar.dart';
@@ -13,11 +13,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _showMenu;
+  int _currentIndex;
 
   @override
   void initState() {
     super.initState();
     _showMenu = false;
+    _currentIndex = 0;
+  }
+
+  void _changedPage(int index) {
+    setState(() => _currentIndex = index);
   }
 
   Widget build(BuildContext context) {
@@ -25,13 +31,15 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.purple,
       body: Stack(
+        alignment: Alignment.center,
         children: <Widget>[
           MyAppBar(
               showMenu: _showMenu,
               onTap: () {
                 setState(() => _showMenu = !_showMenu);
               }),
-          PageViewApp(top: _screenHeight * .20)
+          PageViewApp(changedPage: _changedPage, top: _screenHeight * .20),
+          DotsApp(currentIndex: _currentIndex, top: _screenHeight * .66)
         ],
       ),
     );
