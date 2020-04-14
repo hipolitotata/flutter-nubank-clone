@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nubank_flutter/pages/widgets/dots_app.dart';
-import 'package:nubank_flutter/pages/widgets/menu_app.dart';
+import 'package:nubank_flutter/pages/widgets/menu/index.dart';
+import 'package:nubank_flutter/pages/widgets/menu_bottom/index.dart';
 
 // widgets
 import 'package:nubank_flutter/pages/widgets/my_app_bar.dart';
@@ -96,7 +97,8 @@ class _HomePageState extends State<HomePage> {
               }),
           DotsApp(
               currentIndex: _currentIndex,
-              top: !_showMenu ? _screenHeigth * .70 : _screenHeigth)
+              top: !_showMenu ? _screenHeigth * .70 : _screenHeigth),
+          MenuBottomApp(showMenu: _showMenu)
         ],
       ),
     );
