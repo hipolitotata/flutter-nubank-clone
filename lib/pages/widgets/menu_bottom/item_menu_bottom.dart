@@ -13,8 +13,7 @@ class ItemMenuBottomApp extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
       child: Container(
-        width: 80,
-        height: 30,
+        width: MediaQuery.of(context).size.width * 0.20,
         decoration: BoxDecoration(
             color: Colors.white24, borderRadius: BorderRadius.circular(5)),
         child: Padding(

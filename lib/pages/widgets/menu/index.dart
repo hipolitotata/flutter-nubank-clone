@@ -57,6 +57,7 @@ class MenuApp extends StatelessWidget {
                       style: TextStyle(fontSize: 15),
                     ),
                     SingleChildScrollView(
+                      physics: BouncingScrollPhysics(),
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
