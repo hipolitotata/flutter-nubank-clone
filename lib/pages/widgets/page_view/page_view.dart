@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:nubank_flutter/pages/widgets/cards/card_app.dart';
 import 'package:nubank_flutter/pages/widgets/cards/first_card.dart';
+import 'package:nubank_flutter/pages/widgets/cards/second_card.dart';
+import 'package:nubank_flutter/pages/widgets/cards/three_card.dart';
 
 class PageViewApp extends StatelessWidget {
   @override
@@ -29,8 +31,8 @@ class PageViewApp extends StatelessWidget {
                 physics: BouncingScrollPhysics(),
                 children: <Widget>[
                   CardApp(child: FirstCard()),
-                  CardApp(),
-                  CardApp()
+                  CardApp(child: SecondCard()),
+                  CardApp(child: ThreeCard())
                 ])));
   }
 }

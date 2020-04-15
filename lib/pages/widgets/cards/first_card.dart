@@ -136,10 +136,13 @@ class FirstCard extends StatelessWidget {
                     color: Colors.black38,
                   ),
                   SizedBox(width: 10),
-                  Text(
-                    'Compra mais recente em mercado livre',
-                    style: TextStyle(color: Colors.black38, fontSize: 16),
-                  )
+                  FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text(
+                      'Compra mais recente em mercado',
+                      style: TextStyle(color: Colors.black38, fontSize: 14),
+                    ),
+                  ),
                 ],
               ),
             ),

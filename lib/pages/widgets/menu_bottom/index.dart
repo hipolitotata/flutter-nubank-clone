@@ -15,7 +15,7 @@ class MenuBottomApp extends StatelessWidget {
       bottom: !showMenu ? MediaQuery.of(context).padding.bottom : 0,
       left: 0,
       right: 0,
-      height: MediaQuery.of(context).size.height * .13,
+      height: 120,
       child: IgnorePointer(
         ignoring: showMenu ? true : false,
         child: Container(

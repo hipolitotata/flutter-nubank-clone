@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   _showMenu = !_showMenu;
                   _yPosition =
-                      _showMenu ? _screenHeigth * .75 : _screenHeigth * .24;
+                      _showMenu ? _screenHeigth * .85 : _screenHeigth * .24;
                 });
               }),
           MenuApp(showMenu: _showMenu, top: _screenHeigth * .17),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() => _currentIndex = index);
               },
               onPanUpdate: (details) {
-                double positionBottomLimit = _screenHeigth * .75;
+                double positionBottomLimit = _screenHeigth * .85;
                 double positionTopLimit = _screenHeigth * .24;
                 double midlePosition = positionBottomLimit - positionTopLimit;
 
